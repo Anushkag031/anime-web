@@ -9,7 +9,7 @@ import "./globals.css";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Anime Vault",
+  title: "AniStream",
   description: "Your favorite anime, all in one place.",
 };
 
@@ -23,7 +23,8 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <main className="max-w-7xl mx-auto bg-[#0F1117]">
           <Hero />
-          {children} {/** from page.tsx , pages that will be rendered within the layout */}
+          {children}{" "}
+          {/** from page.tsx , pages that will be rendered within the layout */}
           <Footer />
         </main>
       </body>
