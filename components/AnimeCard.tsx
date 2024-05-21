@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { MotionDiv } from "./MotionDiv";
 
 export interface AnimeProp {
   //description of the movie object
@@ -13,24 +15,38 @@ export interface AnimeProp {
   score: string;
 }
 
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 interface Prop {
   //that will be passed to the component
   anime: AnimeProp;
   index: number;
 }
 
-function AnimeCard({ anime }: Prop) {
+function AnimeCard({ anime, index }: Prop) {
   return (
-    <div className="max-w-sm rounded relative w-full">
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        delay: index * 0.25,
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+      viewport={{ amount: 0 }}
+      className="max-w-sm rounded relative w-full"
+    >
       <div className="relative w-full h-[37vh]">
-        /*
         <Image //image
           src={`https://shikimori.one${anime.image.original}`}
           alt={anime.name}
           fill
           className="rounded-xl"
         />
-        */
       </div>
       {/* name and kind*/}
       <div className="py-4 flex flex-col gap-3">
@@ -69,7 +85,7 @@ function AnimeCard({ anime }: Prop) {
           </div>
         </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 }
 export default AnimeCard;
