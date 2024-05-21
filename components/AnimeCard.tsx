@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export interface AnimeProp {
+export interface AnimeProp { //description of the movie object
   id: string;
   name: string;
   image: {
@@ -12,7 +12,7 @@ export interface AnimeProp {
   score: string;
 }
 
-interface Prop {
+interface Prop {  //that will be passed to the component
   anime: AnimeProp;
   index: number;
 }
@@ -21,17 +21,18 @@ function AnimeCard({ anime }: Prop) {
   return (
     <div className="max-w-sm rounded relative w-full">
       <div className="relative w-full h-[37vh]">
-        <Image
+        <Image  //image
           src={anime.image.original}
           alt={anime.name}
           fill
           className="rounded-xl"
         />
-      </div>
+      </div> 
+      {/* name and kind*/}
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-1">
-          <h2 className="font-bold text-white text-xl line-clamp-1 w-full">
-            {anime.name}
+          <h2 className="font-bold text-white text-xl line-clamp-1 w-full"> 
+            {anime.name} 
           </h2>
           <div className="py-1 px-2 bg-[#161921] rounded-sm">
             <p className="text-white text-sm font-bold capitalize">
@@ -41,7 +42,7 @@ function AnimeCard({ anime }: Prop) {
         </div>
         <div className="flex gap-4 items-center">
           <div className="flex flex-row gap-2 items-center">
-            <Image
+            <Image // episodes
               src="./episodes.svg"
               alt="episodes"
               width={20}
@@ -53,7 +54,7 @@ function AnimeCard({ anime }: Prop) {
             </p>
           </div>
           <div className="flex flex-row gap-2 items-center">
-            <Image
+            <Image //score
               src="./star.svg"
               alt="star"
               width={18}

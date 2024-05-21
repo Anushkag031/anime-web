@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <main className="max-w-7xl mx-auto bg-[#0F1117]">
           <Hero />
-          {children}
+          {children} {/** from page.tsx , pages that will be rendered within the layout */}
           <Footer />
         </main>
       </body>
