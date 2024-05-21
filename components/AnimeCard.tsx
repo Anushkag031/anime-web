@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-export interface AnimeProp { //description of the movie object
+export interface AnimeProp {
+  //description of the movie object
   id: string;
   name: string;
   image: {
@@ -12,7 +13,8 @@ export interface AnimeProp { //description of the movie object
   score: string;
 }
 
-interface Prop {  //that will be passed to the component
+interface Prop {
+  //that will be passed to the component
   anime: AnimeProp;
   index: number;
 }
@@ -21,18 +23,18 @@ function AnimeCard({ anime }: Prop) {
   return (
     <div className="max-w-sm rounded relative w-full">
       <div className="relative w-full h-[37vh]">
-        <Image  //image
-          src={anime.image.original}
+        <Image //image
+          src={`https://shikimori.one${anime.image.original}`}
           alt={anime.name}
           fill
           className="rounded-xl"
         />
-      </div> 
+      </div>
       {/* name and kind*/}
       <div className="py-4 flex flex-col gap-3">
         <div className="flex justify-between items-center gap-1">
-          <h2 className="font-bold text-white text-xl line-clamp-1 w-full"> 
-            {anime.name} 
+          <h2 className="font-bold text-white text-xl line-clamp-1 w-full">
+            {anime.name}
           </h2>
           <div className="py-1 px-2 bg-[#161921] rounded-sm">
             <p className="text-white text-sm font-bold capitalize">
