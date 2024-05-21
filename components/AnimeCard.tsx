@@ -67,5 +67,4 @@ function AnimeCard({ anime }: Prop) {
     </div>
   );
 }
-
 export default AnimeCard;
