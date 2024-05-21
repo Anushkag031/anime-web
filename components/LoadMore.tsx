@@ -34,7 +34,7 @@ function LoadMore() {
         <div ref={ref}>
           {" "}
           {/* we will know when scroll , i.e through ref */}
-          <Image //loader
+          <Image //load spinner
             src="./spinner.svg"
             alt="spinner"
             width={56}
